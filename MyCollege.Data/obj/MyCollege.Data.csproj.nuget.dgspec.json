@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gustavo Melo\\source\\repos\\MyCollege\\MyCollege.Data\\MyCollege.Data.csproj": {}
+    "C:\\Users\\Gustavo Melo\\Documents\\MyCollege\\MyCollege.Data\\MyCollege.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gustavo Melo\\source\\repos\\MyCollege\\MyCollege.Data\\MyCollege.Data.csproj": {
+    "C:\\Users\\Gustavo Melo\\Documents\\MyCollege\\MyCollege.Data\\MyCollege.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gustavo Melo\\source\\repos\\MyCollege\\MyCollege.Data\\MyCollege.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Gustavo Melo\\Documents\\MyCollege\\MyCollege.Data\\MyCollege.Data.csproj",
         "projectName": "MyCollege.Data",
-        "projectPath": "C:\\Users\\Gustavo Melo\\source\\repos\\MyCollege\\MyCollege.Data\\MyCollege.Data.csproj",
+        "projectPath": "C:\\Users\\Gustavo Melo\\Documents\\MyCollege\\MyCollege.Data\\MyCollege.Data.csproj",
         "packagesPath": "C:\\Users\\Gustavo Melo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gustavo Melo\\source\\repos\\MyCollege\\MyCollege.Data\\obj\\",
+        "outputPath": "C:\\Users\\Gustavo Melo\\Documents\\MyCollege\\MyCollege.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
