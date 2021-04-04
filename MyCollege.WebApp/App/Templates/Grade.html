@@ -1,0 +1,19 @@
+﻿<div class="container">
+    <button type="button" class="btn btn-info" ng-click="Modals.save()">New Grade</button>
+    <br>
+    <br />
+    <div class="row">
+        <div class="col-sm-4" data-ng-repeat="overview in overviews">
+            <div class="card bg-light mb-3" style="max-width: 30rem;">
+                <div class="card-header">{{overview.grade.studentName}}</div>
+                <div class="card-body">
+                    <p class="card-text"><b>Subject:</b>{{overview.grade.subjectName}} </p>
+                    <p class="card-text"><b>Value:</b> {{overview.grade.value}}</p>
+
+                    <i class="far fa-edit" style="float:right;padding-left: 2em;" ng-click="Modals.save(overview.grade)"></i>
+                    
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>

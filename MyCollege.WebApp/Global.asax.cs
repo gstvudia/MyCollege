@@ -1,4 +1,5 @@
-﻿using MyCollege.Data;
+﻿using AutoMapper;
+using MyCollege.Data;
 using MyCollege.Data.Migrations;
 using System.Data.Entity;
 using System.Web.Http;

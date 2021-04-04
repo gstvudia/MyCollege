@@ -1,0 +1,93 @@
+﻿<div class="actionModal">
+    <div class="modal-header">
+        <h3 class="modal-title"> <span>Grade Information</span> </h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="gradeForm" method="post" novalidate>
+            <fieldset>
+
+
+                <div class="form-group">
+                    <label for="subject" class="col-lg-2 control-label">Select the subject:</label>
+                    <div class="col-lg-10">
+                        <md-input-container>
+                            <md-select ng-model="grade.selectedSubject"
+                                       md-on-close="clearSearchTerm()"
+                                       md-container-class="selectHeader"
+                                       name="gradeSubject"
+                                       id="gradeSubject"
+                                       required>
+                                <i class="fa fa-times-circle" ng-click="closeSelectBox()" style="float:right;" />
+
+                                <md-select-header class="select-header">
+                                    <input ng-model="searchTerm" aria-label="Type subject name"
+                                           type="search" placeholder="Ex. Calculus"
+                                           class="header-searchbox md-text" onkeydown="event.stopPropagation()">
+                                </md-select-header>
+                                <md-optgroup label="Subject">
+                                    <md-option ng-selected="subject.isSelected != undefined && subject.isSelected"
+                                               ng-value="subject.id"
+                                               ng-repeat="subject in subjectsList | filter: { name: searchTerm }">
+                                        {{subject.name}}
+                                    </md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                        <p ng-show="gradeForm.gradeSubject.$invalid" class="help-block has-error">Subject is required.</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="student" class="col-lg-2 control-label">Select the student:</label>
+                    <div class="col-lg-10">
+                        <md-input-container>
+                            <md-select ng-model="grade.selectedStudent"
+                                       md-on-close="clearSearchTerm()"
+                                       md-container-class="selectHeader"
+                                       name="gradeStudent"
+                                       id="gradeStudent"
+                                       required>
+                                <i class="fa fa-times-circle" ng-click="closeSelectBox()" style="float:right;" />
+
+                                <md-select-header class="select-header">
+                                    <input ng-model="searchTerm" aria-label="Type student name"
+                                           type="search" placeholder="Ex. Homer"
+                                           class="header-searchbox md-text" onkeydown="event.stopPropagation()">
+                                </md-select-header>
+                                <md-optgroup label="Subject">
+                                    <md-option ng-selected="student.isSelected != undefined && student.isSelected"
+                                               ng-value="student.id"
+                                               ng-repeat="student in studentsList | filter: { name: searchTerm }">
+                                        {{student.name}}
+                                    </md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                        <p ng-show="gradeForm.gradeStudent.$invalid" class="help-block has-error">Student is required.</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group" ng-class="{ 'has-error' : gradeForm.gradeRegistration.$invalid}">
+                    <label for="grade" class="col-lg-2 control-label">Grade</label>
+                    <div class="col-lg-3">
+                        <input type="number"
+                               class="form-control"
+                               id="gradeValue"
+                               name="gradeValue"
+                               placeholder="Grade"
+                               min="0"
+                               ng-model="grade.value" required>
+                        <p ng-show="gradeForm.gradeValue.$invalid" class="help-block has-error">Grade value is required.</p>
+                    </div>
+                </div>
+
+            </fieldset>
+    </form>
+</div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button type="submit" class="btn btn-primary" ng-click="save()" ng-disabled="gradeForm.$invalid">Save</button>
+    </div>
+</div>

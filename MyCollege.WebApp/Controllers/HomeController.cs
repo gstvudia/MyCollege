@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MyCollege.Data.Migrations;
 using System.Web.Mvc;
 
 namespace MyCollege.WebApp.Controllers
@@ -10,8 +7,7 @@ namespace MyCollege.WebApp.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
+            DbInitializationHandler.Initialize();
             return View();
         }
     }

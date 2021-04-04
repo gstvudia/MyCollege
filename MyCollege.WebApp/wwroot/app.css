@@ -1,0 +1,123 @@
+﻿body {
+}
+
+.actionModal {
+    margin-top: 10rem;
+}
+
+.sidebar-nav {
+    background-color: #808080;
+    height: 100vh;   
+}
+
+    .sidebar-nav .sidemenu {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        line-height: 5rem;
+    }
+
+        .sidebar-nav .sidemenu a, a:hover, a:active, a:visited {
+            text-decoration: none;
+            color: #f3f3f3;
+            font-size: 16px;
+        }
+
+.spinner {
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.loader {
+    margin-top: 15%;
+    margin-left: 45%;
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #000000;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.md-datepicker-calendar-pane.md-pane-open {
+    z-index: 9999 !important;
+}
+
+.selectHeader {
+    /* Please note: All these selectors are only applied to children of elements with the 'selectdemoSelectHeader' class */
+}
+
+    .selectHeader .header-searchbox {
+        border: none;
+        outline: none;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+    }
+
+    .selectHeader .select-header {
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+        padding-left: 16px;
+        height: 48px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        width: auto;
+    }
+
+    .selectHeader md-content._md {
+        max-height: 240px;
+    }
+
+    .selectHeader md-input-container {
+        min-width: 112px;
+    }
+
+.md-select-menu-container, .md-open-menu-container {
+    z-index: 9999 !important;
+    margin-top: 10rem;
+    margin-left: 4rem;
+    width: 20%;
+}
+
+.md-backdrop.md-select-backdrop {
+    z-index: 899 !important;
+}
+
+.md-panel {
+    z-index: 0 !important;
+}
+.md-dialog {
+    z-index: 0 !important;
+}

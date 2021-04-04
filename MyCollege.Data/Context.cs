@@ -32,22 +32,26 @@ namespace MyCollege.Data
             modelBuilder.Entity<Grade>()
                 .HasRequired(s => s.Subject)
                 .WithMany(c => c.Grades)
-                .HasForeignKey<int>(e => e.SubjectId);
+                .HasForeignKey<int>(e => e.SubjectId)
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Grade>()
                 .HasRequired(s => s.Student)
                 .WithMany(c => c.Grades)
-                .HasForeignKey<int>(e => e.StudentId);
+                .HasForeignKey<int>(e => e.StudentId)
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Subject>()
                 .HasRequired(e => e.Teacher)
                 .WithMany(e => e.Subjects)
-                .HasForeignKey<int>(e => e.TeacherId);
+                .HasForeignKey<int>(e => e.TeacherId)
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Subject>()
-                 .HasRequired(e => e.Course)
+                 .HasOptional(e => e.Course)
                  .WithMany(e => e.Subjects)
-                 .HasForeignKey<int>(e => e.CourseId);
+                 .HasForeignKey<int?>(e => e.CourseId)
+                 .WillCascadeOnDelete(true);
         }
     }
 }

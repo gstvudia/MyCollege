@@ -7,6 +7,10 @@ namespace MyCollege.Services.Interfaces
 {
     public interface ICourseService
     {
-        List<Course> GetCoursesOverview();
+        Course Add(Course newCourse);
+        bool AssociateSubjects(int courseId, int[] subjectsId);
+        bool Delete(int courseId);
+        List<Course> GetCourses();
+        bool Update(Course newCourse);
     }
 }

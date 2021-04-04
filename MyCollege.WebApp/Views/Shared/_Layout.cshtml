@@ -2,50 +2,80 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>My College App</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 
+    <link href="~/wwroot/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="~/Content/angular-material.css" rel="stylesheet" />
+    <link href="~/Content/angular-material.layout-attributes.min.css" rel="stylesheet" />
+    <link href="~/Content/angular-material.layouts.min.css" rel="stylesheet" />
+</head>
+<body ng-app="myCollege">
+
+    <div class="row">
+        <div class="col-lg-2 sidebar-nav">
+            <ul class="sidemenu" >
+                <li><a href="/#/Home/Courses">Courses</a></li>
+                <li><a href="/#/Home/Subjects">Subjects</a></li>
+                <li><a href="/#/Home/Students">Students</a></li>
+                <li><a href="/#/Home/Teachers">Teachers</a></li>
+                <li><a href="/#/Home/Grades">Grades</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-10">
+            <div class="container body-content">
+                <div ng-view>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/Scripts/angular-aria.min.js"></script>
     <script src="~/Scripts/angular-animate.min.js"></script>
     <script src="~/Scripts/angular-material-mocks.js"></script>
     <script src="~/Scripts/angular-material.min.js"></script>
-</head>
-<body ng-app="myCollege">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        <div ng-view>
-            @RenderBody()
-        </div>
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <link href="~/Scripts/toaster.min.css" rel="stylesheet" />
+    <script src="~/Scripts/toaster.min.js"></script>
+    <script src="~/App/app.js"></script>
+    <script src="~/App/SignalR/hubConnector.js"></script>
+    <script src="~/Scripts/currency-mask.js"></script>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+    <script src="~/App/Services/courseService.js"></script>
+    <script src="~/App/Services/subjectService.js"></script>
+    <script src="~/App/Services/teacherService.js"></script>
+    <script src="~/App/Services/studentService.js"></script>
+    <script src="~/App/Services/gradeService.js"></script>
+
+    <script src="~/App/Controllers/Course/courseController.js"></script>
+    <script src="~/App/Controllers/Course/courseFormModalController.js"></script>
+    <script src="~/App/Controllers/Subject/subjectController.js"></script>
+    <script src="~/App/Controllers/Subject/subjectFormModalController.js"></script>
+    <script src="~/App/Controllers/Student/studentController.js"></script>
+    <script src="~/App/Controllers/Student/studentFormModalController.js"></script>
+    <script src="~/App/Controllers/Teacher/teacherController.js"></script>
+    <script src="~/App/Controllers/Teacher/teacherFormModalController.js"></script>
+    <script src="~/App/Controllers/Grade/gradeController.js"></script>
+    <script src="~/App/Controllers/Grade/gradeFormModalController.js"></script>
 </body>
 </html>

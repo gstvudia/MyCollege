@@ -1,0 +1,27 @@
+﻿<div class="container">
+    <button type="button" class="btn btn-info" ng-click="Modals.save()">New Subject</button>
+    <br>
+    <br />
+    <div class="row">
+        <div class="col-sm-4" data-ng-repeat="overview in overviews">
+            <div class="card bg-light mb-3" style="max-width: 30rem;">
+                <div class="card-header">{{overview.subject.name}}</div>
+                <div class="card-body">
+                    <p class="card-text"><b>Students:</b> {{overview.studentsCount}}</p>
+                    <p class="card-text"><b>Average grades:</b> {{overview.averageGrade}}</p>
+
+                    
+                </div>
+
+                <div class="card-header"><b>Teacher: </b>{{overview.subject.teacher.name}}</div>
+                <div class="card-body">
+                    <p class="card-text"><b>Salary:</b> {{overview.subject.teacher.salary}}</p>
+                    <p class="card-text"><b>Birthdate:</b> {{overview.subject.teacher.birthDate}}</p>
+
+                    <i class="far fa-edit" style="float:right;padding-left: 2em;" ng-click="Modals.save(overview.subject)"></i>
+                    <i class="fas fa-trash-alt" style="float:right;padding-left: 2em;" ng-click="Modals.delete(overview.subject.id)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

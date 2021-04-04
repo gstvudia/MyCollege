@@ -1,0 +1,53 @@
+﻿<div class="actionModal">
+    <div class="modal-header">
+        <h3 class="modal-title"> <span>Teacher Information</span> </h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="teacherForm" method="post" novalidate>
+            <fieldset>
+                <div class="form-group" ng-class="{ 'has-error' : teacherForm.teacherName.$invalid}">
+                    <label for="name" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-3">
+                        <input type="text"
+                               class="form-control"
+                               id="teacherName"
+                               name="teacherName"
+                               placeholder="Name"
+                               ng-model="teacher.name" required>
+                        <p ng-show="teacherForm.teacherName.$invalid" class="help-block has-error">Name is required.</p>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : teacherForm.teacherBirthdate.$invalid}">
+                    <label for="birthdate" class="col-lg-2 control-label">BirthDate</label>
+                    <div class="col-lg-3">
+                        <md-datepicker ng-model="teacher.birthDate"
+                                       id="teacherBirthdate"
+                                       name="teacherBirthdate"                                       
+                                       required></md-datepicker>
+                        <p ng-show="teacherForm.teacherBirthdate.$invalid" class="help-block has-error">Birthdate is required.</p>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : teacherForm.teacherSalary.$invalid}">
+                    <label for="salary" class="col-lg-2 control-label">Salary</label>
+                    <div class="col-lg-10">
+                        <input type="text"
+                               currency-mask
+                               class="form-control"
+                               id="teacherSalary"
+                               name="teacherSalary"
+                               placeholder="Salary"
+                               ng-model="teacher.salary" required>
+                        <p ng-show="teacherForm.teacherSalary.$invalid" class="help-block has-error">Salary is required.</p>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button type="submit" class="btn btn-primary" ng-click="save()" ng-disabled="teacherForm.$invalid">Save</button>
+    </div>
+</div>

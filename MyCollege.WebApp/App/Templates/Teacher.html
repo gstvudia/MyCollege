@@ -1,0 +1,19 @@
+﻿<div class="container">
+    <button type="button" class="btn btn-info" ng-click="Modals.save()">New Teacher</button>
+    <br>
+    <br />
+    <div class="row">
+        <div class="col-sm-4" data-ng-repeat="overview in overviews">
+            <div class="card bg-light mb-3" style="max-width: 30rem;">
+                <div class="card-header">{{overview.teacher.name}}</div>
+                <div class="card-body">
+                    <p class="card-text"><b>Birthdate:</b> {{overview.teacher.birthDate}}</p>
+                    <p class="card-text"><b>Salary:</b> {{overview.teacher.salary}}</p>
+
+                    <i class="far fa-edit" style="float:right;padding-left: 2em;" ng-click="Modals.save(overview.teacher)"></i>
+                    <i class="fas fa-trash-alt" style="float:right;padding-left: 2em;" ng-click="Modals.delete(overview.teacher.id)"></i>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>

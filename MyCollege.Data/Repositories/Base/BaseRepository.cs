@@ -12,23 +12,22 @@ namespace MyCollege.Data.Repositories.Base
         {
             _dbContext = dbContext;
         }
-        public TEntity GetById(int id)
+        public virtual TEntity GetById(int id)
         {
             return _dbContext.Set<TEntity>().Find(id);
         }
-        public List<TEntity> GetAll()
+        
+        public virtual List<TEntity> GetAll()
         {
             return _dbContext.Set<TEntity>().ToList();
         }
 
-        public void Add(TEntity entity)
+        public virtual TEntity Add(TEntity entity)
         {
-            _dbContext.Set<TEntity>().Add(entity);
+            var created = _dbContext.Set<TEntity>().Add(entity);
+            _dbContext.SaveChanges();
+            return created;
         }
 
-        public void Remove(TEntity entity)
-        {
-            _dbContext.Set<TEntity>().Remove(entity);
-        }
     }
 }

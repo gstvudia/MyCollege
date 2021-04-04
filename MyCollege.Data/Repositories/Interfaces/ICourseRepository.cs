@@ -5,6 +5,8 @@ namespace MyCollege.Data.Repositories.Interfaces
 {
     public interface ICourseRepository : IBaseRepository<Course>
     {
-        int UpdateCourse(Course newCourse);
+        Course GetByName(string name);
+        bool Remove(int courseId);
+        bool UpdateCourse(Course newCourse);
     }
 }

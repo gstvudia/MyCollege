@@ -1,0 +1,24 @@
+﻿<div class="container">
+    <button type="button" class="btn btn-info" ng-click="Modals.save()">New Course</button>
+    <br>
+    <br />
+    <div class="spinner" ng-show="loading">
+        <div class="loader"></div>
+    </div>    
+    
+    <div class="row">
+        <div class="col-sm-4" data-ng-repeat="overview in overviews">
+            <div class="card bg-light mb-3" style="max-width: 30rem;">
+                <div class="card-header">{{overview.course.name}}</div>
+                <div class="card-body">
+                    <p class="card-text"><b>Students:</b> {{overview.studentsCount}}</p>
+                    <p class="card-text"><b>Teachers:</b> {{overview.teachersCount}}</p>
+                    <p class="card-text"><b>Average grades:</b> {{overview.averageGrade}}</p>
+
+                    <i class="far fa-edit" style="float:right;padding-left: 2em;" ng-click="Modals.save(overview.course)"></i>
+                    <i class="fas fa-trash-alt" style="float:right;padding-left: 2em;" ng-click="Modals.delete(overview.course.id)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
